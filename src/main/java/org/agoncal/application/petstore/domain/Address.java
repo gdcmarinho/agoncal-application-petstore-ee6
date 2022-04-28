@@ -5,6 +5,7 @@ import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Antonio Goncalves
@@ -23,25 +24,31 @@ public class Address {
     @NotNull
     @Size(min = 5, max = 50)
     @Getter
+    @Setter
     private String street1;
     @Getter
+    @Setter
     private String street2;
     @Column(nullable = false, length = 100)
     @NotNull
     @Size(min = 2, max = 50)
     @Getter
+    @Setter
     private String city;
     @Getter
+    @Setter
     private String state;
     @Column(name = "zip_code", nullable = false, length = 10)
     @NotNull
     @Size(min = 1, max = 10)
     @Getter
+    @Setter
     private String zipcode;
     @Column(nullable = false, length = 50)
     @NotNull
     @Size(min = 2, max = 50)
     @Getter
+    @Setter
     private String country; // TODO use an enum
 
     // ======================================
