@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +16,8 @@ import lombok.Setter;
  */
 
 @Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
 public class Address {
 
     // ======================================
@@ -50,20 +54,6 @@ public class Address {
     @Getter
     @Setter
     private String country; // TODO use an enum
-
-    // ======================================
-    // =            Constructors            =
-    // ======================================
-
-    public Address() {
-    }
-
-    public Address(String street1, String city, String zipcode, String country) {
-        this.street1 = street1;
-        this.city = city;
-        this.zipcode = zipcode;
-        this.country = country;
-    }
 
     // ======================================
     // =   Methods hash, equals, toString   =
